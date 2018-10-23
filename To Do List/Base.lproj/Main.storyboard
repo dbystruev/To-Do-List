@@ -33,12 +33,112 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Список дел" id="ntg-HH-R9s">
                         <barButtonItem key="leftBarButtonItem" style="done" systemItem="done" id="a3D-aJ-yZf"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="mt3-G1-qpQ"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="mt3-G1-qpQ">
+                            <connections>
+                                <segue destination="Nbl-6v-2yq" kind="presentation" id="Ghu-YE-oLa"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DjI-AL-Tly" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="898" y="833"/>
+        </scene>
+        <!--Добавить дело-->
+        <scene sceneID="48a-L0-vDw">
+            <objects>
+                <tableViewController id="Xgj-Ef-Zjt" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="1e2-nW-Cor">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection headerTitle="Базовая информация" id="HZL-7b-tOW">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="gST-5R-iCX">
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gST-5R-iCX" id="hCD-zd-jou">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lky-vf-LoC">
+                                                    <rect key="frame" x="16" y="4" width="36" height="36"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="36" id="792-Yl-xTf"/>
+                                                        <constraint firstAttribute="width" constant="36" id="CtF-Pm-8Pz"/>
+                                                    </constraints>
+                                                    <state key="normal" image="Unchecked"/>
+                                                </button>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Напомнить мне о..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ptA-g8-FlG">
+                                                    <rect key="frame" x="60" y="7" width="299" height="30"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="ptA-g8-FlG" secondAttribute="trailing" id="GhV-dc-mLq"/>
+                                                <constraint firstItem="ptA-g8-FlG" firstAttribute="leading" secondItem="Lky-vf-LoC" secondAttribute="trailing" constant="8" id="JXR-Id-iw3"/>
+                                                <constraint firstItem="Lky-vf-LoC" firstAttribute="centerY" secondItem="hCD-zd-jou" secondAttribute="centerY" id="P6b-OE-pAa"/>
+                                                <constraint firstItem="Lky-vf-LoC" firstAttribute="leading" secondItem="hCD-zd-jou" secondAttribute="leadingMargin" id="cI6-pC-xUC"/>
+                                                <constraint firstItem="ptA-g8-FlG" firstAttribute="centerY" secondItem="hCD-zd-jou" secondAttribute="centerY" id="tBm-kg-snh"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection id="hSu-bk-GGm">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="iYe-iT-TuQ">
+                                        <rect key="frame" x="0.0" y="135.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iYe-iT-TuQ" id="4Nl-Zr-aSt">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="Xgj-Ef-Zjt" id="doi-zF-Wym"/>
+                            <outlet property="delegate" destination="Xgj-Ef-Zjt" id="8Fx-CC-Gep"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Добавить дело" id="wpR-Ei-4pi">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Juc-QI-dJN">
+                            <connections>
+                                <segue destination="inX-49-bka" kind="unwind" unwindAction="unwindToDoListWithSegue:" id="kkk-3u-jzs"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="B6E-RR-X8f">
+                            <connections>
+                                <segue destination="inX-49-bka" kind="unwind" identifier="saveUnwind" unwindAction="unwindToDoListWithSegue:" id="N2m-Wc-owT"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yKh-zG-rAo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="inX-49-bka" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2506" y="833"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="zNN-0b-h8z">
+            <objects>
+                <navigationController id="Nbl-6v-2yq" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QHC-eW-tQq">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Xgj-Ef-Zjt" kind="relationship" relationship="rootViewController" id="Cph-JZ-Dnb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hAX-HG-LTt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1729" y="833"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Mok-w2-7wd">
@@ -57,4 +157,7 @@
             <point key="canvasLocation" x="169" y="834"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Unchecked" width="44" height="44"/>
+    </resources>
 </document>
