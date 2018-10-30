@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		694AF1DA21830DFC00C14C6F /* ToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694AF1D921830DFC00C14C6F /* ToDoViewController.swift */; };
+		6968C3CC218857D2009C4380 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6968C3CB218857B6009C4380 /* Realm.framework */; };
+		6968C3CD218857D2009C4380 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6968C3CB218857B6009C4380 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6968C3CE218857D7009C4380 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6968C3CA218857B6009C4380 /* RealmSwift.framework */; };
+		6968C3CF218857D7009C4380 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6968C3CA218857B6009C4380 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		69B626B8217F0C05001DBC4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B626B7217F0C05001DBC4A /* AppDelegate.swift */; };
 		69B626BD217F0C05001DBC4A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69B626BB217F0C05001DBC4A /* Main.storyboard */; };
 		69B626BF217F0C0A001DBC4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69B626BE217F0C0A001DBC4A /* Assets.xcassets */; };
@@ -16,8 +20,25 @@
 		69B626CC217F1135001DBC4A /* ToDoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B626CB217F1135001DBC4A /* ToDoTableViewController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		6968C3B52188435C009C4380 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				6968C3CF218857D7009C4380 /* RealmSwift.framework in Embed Frameworks */,
+				6968C3CD218857D2009C4380 /* Realm.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		694AF1D921830DFC00C14C6F /* ToDoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoViewController.swift; sourceTree = "<group>"; };
+		6968C3CA218857B6009C4380 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
+		6968C3CB218857B6009C4380 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		69B626B4217F0C05001DBC4A /* To Do List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "To Do List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		69B626B7217F0C05001DBC4A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		69B626BC217F0C05001DBC4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -33,15 +54,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6968C3CE218857D7009C4380 /* RealmSwift.framework in Frameworks */,
+				6968C3CC218857D2009C4380 /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6968C3C9218857B6009C4380 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6968C3CA218857B6009C4380 /* RealmSwift.framework */,
+				6968C3CB218857B6009C4380 /* Realm.framework */,
+			);
+			name = Frameworks;
+			path = "To Do List/Frameworks";
+			sourceTree = "<group>";
+		};
 		69B626AB217F0C05001DBC4A = {
 			isa = PBXGroup;
 			children = (
+				6968C3C9218857B6009C4380 /* Frameworks */,
 				69B626B6217F0C05001DBC4A /* To Do List */,
 				69B626B5217F0C05001DBC4A /* Products */,
 			);
@@ -80,6 +114,7 @@
 				69B626B0217F0C05001DBC4A /* Sources */,
 				69B626B1217F0C05001DBC4A /* Frameworks */,
 				69B626B2217F0C05001DBC4A /* Resources */,
+				6968C3B52188435C009C4380 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -292,6 +327,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8J39KF9DMS;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/To\\ Do\\ List/Frameworks",
+					"$(PROJECT_DIR)/To\\ Do\\ List/Frameworks",
+				);
 				INFOPLIST_FILE = "To Do List/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -310,6 +351,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8J39KF9DMS;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/To\\ Do\\ List/Frameworks",
+					"$(PROJECT_DIR)/To\\ Do\\ List/Frameworks",
+				);
 				INFOPLIST_FILE = "To Do List/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
